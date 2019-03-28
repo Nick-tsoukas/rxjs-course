@@ -26,12 +26,17 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const click$ = fromEvent(document, 'click');
+   const interval$ = timer(1000,1000);
+   const sub = interval$.subscribe((val) => console.log(val));
 
-    click$.subscribe( 
-        val => console.log(val ),
-        err => console.log(err),
-       )
+   setTimeout(() => sub.unsubscribe(), 5000);
   }
 
 }
+
+//  the dollar sign = type rxjs Observable the observable functions are blueprints for streams stored in the variables 
+// We assign the interval subscribe method to const sub and the call setTimeout on it ...
+  //  const interval$ = timer(1000,1000);
+  //  const sub = interval$.subscribe((val) => console.log(val));
+
+  //  setTimeout(() => sub.unsubscribe(), 5000);

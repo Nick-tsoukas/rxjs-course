@@ -57,7 +57,7 @@ import {MatMomentDateModule} from "@angular/material-moment-adapter";
         MatSelectModule,
         MatDatepickerModule,
         MatMomentDateModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
     providers: [
 

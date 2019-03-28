@@ -28,7 +28,10 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     const click$ = fromEvent(document, 'click');
 
-    click$.subscribe( val => { console.log(val )});
+    click$.subscribe( 
+        val => console.log(val ),
+        err => console.log(err),
+       )
   }
 
 }

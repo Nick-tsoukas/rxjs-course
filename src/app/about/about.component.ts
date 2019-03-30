@@ -28,19 +28,19 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const http$ = createObservable('/api/courses');
-    // pipes the http observable into the map function rxjs to call a method on all its values returning and array of the response objects property payload
-    const courses$ = http$
-      .pipe(
-        map(res =>  Object.values(res["payload"]) )
-      );
+    // const http$ = createObservable('/api/courses');
+    // // pipes the http observable into the map function rxjs to call a method on all its values returning and array of the response objects property payload
+    // const courses$ = http$
+    //   .pipe(
+    //     map(res =>  Object.values(res["payload"]) )
+    //   );
 
-    // now subscribe to the courses observable
-    courses$.subscribe(
-      courses => console.log(courses),
-      noop,
-      () => console.log('completed')
-    )
+    // // now subscribe to the courses observable
+    // courses$.subscribe(
+    //   courses => console.log(courses),
+    //   noop,
+    //   () => console.log('completed')
+    // )
     
 
 

@@ -30,9 +30,10 @@ export class HomeComponent implements OnInit {
         const http$ = createObservable('/api/courses');
         const courses$: Observable<Course[]> = http$
             .pipe(
-                map(res => Object.values(res["payload"]))
+                map(res => Object.values(res["payload"])),
+                tap((res) => console.log(res)),
+                shareReplay()
             );
-            console.log(courses$)
         
         this.advancedCourses$ = courses$
                 .pipe(
